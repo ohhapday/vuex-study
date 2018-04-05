@@ -16,12 +16,12 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <div>{{count}}</div>
+    <button v-on:click="increment">Greet</button>
   </div>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex';
-
   export default {
     name: 'app',
     data() {
@@ -29,10 +29,15 @@
         msg: 'Welcome to Your Vue.js App'
       }
     },
+    computed: {
+      count() {
+        return this.$store.state.count
+      }
+    },
     methods: {
-      ...mapMutations({
-
-      })
+      increment() {
+        this.$store.commit('increment');
+      }
     }
   }
 </script>
