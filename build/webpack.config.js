@@ -2,11 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    main: './src/main.js',
+    vendor: ['vue', 'vue-router', 'vuex']
+  },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/dist/'
   },
   module: {
     rules: [
@@ -16,6 +19,9 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
+      }, {
+        test: /.s[a|c]ss$/,
+        loader: 'style!css!sass'
       }, {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -40,7 +46,11 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
+      filename: '[name].js'
+    }),
   ],
   resolve: {
     alias: {
@@ -49,8 +59,9 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    open: false,
     historyApiFallback: true,
-    noInfo: true,
+    noInfo: false,
     overlay: true
   },
   performance: {
@@ -78,4 +89,5 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     })
   ])
-};
+}
+;
