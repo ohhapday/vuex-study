@@ -1,13 +1,19 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Test from '../components/Test';
+import Index from '../pages';
+import Index2 from '../pages/Index2';
 import NotFound from '../pages/General/NotFound';
 
 const routes = [
   {
     path: '/',
-    component: Test
+    name: 'Root',
+    component: Index
+  }, {
+    path: '/test',
+    name: 'Sub',
+    component: Index2
   },
   /*
   componentsMenu,
