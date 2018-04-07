@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     main: './src/main.js',
-    vendor: ['vue', 'vue-router', 'vuex']
+    vendor: ['vue', 'vue-material', 'vue-router', 'vuex']
   },
   output: {
     filename: '[name].js',

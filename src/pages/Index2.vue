@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
+    <h1>{{ this.$route.params }}</h1>
+    <router-link to="/">home</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+  // todo matrialcss 추가 및 페이지 전체 레이아웃 추가 요망
   export default {
     name: 'app2',
     data() {
@@ -26,6 +29,8 @@
       }
     },
     mounted() {
+      console.log(this.$route);
+      console.log(this);
     }
   }
 </script>
