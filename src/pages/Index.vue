@@ -2,6 +2,15 @@
   <div id="app">
     <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
+    <h1>{{ reversedMsg }}</h1>
+    <div class="md-layout">
+      <div class="md-layout-item md-size-75">
+        <md-field>
+          <label>컨텐츠 밸뉴</label>
+          <md-input v-model="msg"></md-input>
+        </md-field>
+      </div>
+    </div>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -19,6 +28,7 @@
     <div>{{count}}</div>
     <md-button v-on:click="increment">+</md-button>
     <md-button v-on:click="decrement">-</md-button>
+    <md-button v-on:click="reversMsg">reversMsg</md-button>
   </div>
 </template>
 
@@ -27,12 +37,19 @@
     name: 'app',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome 나의 첫번째 Vue 프로젝트',
       }
     },
+    created() {},
+    mounted() {},
+    updated() {},
+    destroyed() {},
     computed: {
       count() {
         return this.$store.state.count
+      },
+      reversedMsg() {
+        return this.msg.split('').reverse().join('');
       }
     },
     methods: {
@@ -41,9 +58,16 @@
       },
       decrement() {
         this.$store.commit('decrement');
+      },
+      reversMsg() {
+        this.msg = this.msg.split('').reverse().join('');
+        console.log(this);
       }
     },
-    mounted() {
+    watch: {
+      reversedMsg(data) {
+        console.log(this.$route);
+      },
     }
   }
 </script>
@@ -72,7 +96,7 @@
     margin: 0 10px;
   }
 
-  ul>li {
+  ul > li {
     color: #a8b9a8;
   }
 </style>

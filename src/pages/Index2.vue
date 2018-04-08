@@ -20,7 +20,7 @@
   export default {
     name: 'app',
     mounted() {
-      console.log($('.md-content'));
+      // console.log($('.md-content'));
     },
     methods: {
       aclick() {

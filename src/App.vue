@@ -12,6 +12,8 @@
         msg: 'Welcome to Your Vue.js App'
       }
     },
+    watch: {
+    }
   }
 </script>
 
