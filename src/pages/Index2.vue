@@ -1,65 +1,48 @@
 <template>
-  <div id="app">
-    <h1>{{ this.$route.params }}</h1>
-    <router-link to="/">home</router-link>
-    <router-view></router-view>
+  <div class="elevation-demo">
+    <md-content class="md-elevation-24" v-on:click="aclick">1</md-content>
+    <md-content class="md-elevation-2">2</md-content>
+    <md-content class="md-elevation-3">3</md-content>
+    <md-content class="md-elevation-4">4</md-content>
+    <md-content class="md-elevation-5">5</md-content>
+    <md-content class="md-elevation-6">6</md-content>
+
+    <md-button>Default</md-button>
+    <md-button class="md-raised">Default</md-button>
+    <md-button class="md-raised" :md-ripple="false">Ripple Off</md-button>
+    <md-button class="md-raised md-primary">Primary</md-button>
+    <md-button class="md-raised md-accent">Accent</md-button>
+    <md-button class="md-raised" disabled>Disabled</md-button>
   </div>
 </template>
 
 <script>
-  // todo matrialcss 추가 및 페이지 전체 레이아웃 추가 요망
   export default {
-    name: 'app2',
-    data() {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
-    },
-    computed: {
-      count() {
-        return this.$store.state.count
-      }
+    name: 'app',
+    mounted() {
+      console.log($('.md-content'));
     },
     methods: {
-      increment() {
-        this.$store.commit('increment');
-      },
-      decrement() {
-        this.$store.commit('decrement');
+      aclick() {
+        alert('test');
       }
-    },
-    mounted() {
-      console.log(this.$route);
-      console.log(this);
     }
   }
 </script>
 
-<style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+<style lang="scss" scoped>
+  .elevation-demo {
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  h1, h2 {
-    font-weight: normal;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  a {
-    color: #42b983;
+  .md-content {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>

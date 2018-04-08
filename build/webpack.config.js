@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     main: './src/main.js',
-    vendor: ['vue', 'vue-material', 'vue-router', 'vuex']
+    vendor: ['axios', 'vue', 'vue-material', 'vue-router', 'vuex']
   },
   output: {
     filename: '[name].js',
@@ -26,8 +26,10 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {}
-          // other vue-loader options go here
+          loaders: {
+            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+          }
         }
       }, {
         test: /\.js$/,

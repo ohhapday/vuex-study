@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <md-button>Default</md-button>
-    <md-button :md-ripple="false">Ripple Off</md-button>
-    <md-button class="md-primary">Primary</md-button>
-    <md-button class="md-accent">Accent</md-button>
-    <md-button disabled>Disabled</md-button>
     <router-view></router-view>
   </div>
 </template>
@@ -19,3 +14,16 @@
     },
   }
 </script>
+
+<style lang="scss">
+  /*
+  @import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+  @include md-register-theme("default", (
+    primary: md-get-palette-color(blue, A200), // The primary color of your application
+    accent: md-get-palette-color(red, A200) // The accent or secondary color
+  ));
+
+  @import "~vue-material/dist/theme/all"; // Apply the theme
+  */
+</style>

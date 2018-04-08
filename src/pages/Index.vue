@@ -17,14 +17,14 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
     <div>{{count}}</div>
-    <button v-on:click="increment">+</button>
-    <button v-on:click="decrement">-</button>
+    <md-button v-on:click="increment">+</md-button>
+    <md-button v-on:click="decrement">-</md-button>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'app2',
+    name: 'app',
     data() {
       return {
         msg: 'Welcome to Your Vue.js App'
@@ -54,7 +54,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: #FFFFFF;
     margin-top: 60px;
   }
 
@@ -72,7 +72,7 @@
     margin: 0 10px;
   }
 
-  a {
-    color: #42b983;
+  ul>li {
+    color: #a8b9a8;
   }
 </style>
