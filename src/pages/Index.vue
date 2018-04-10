@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img src="../assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h1>{{ reversedMsg }}</h1>
+    <h1 class="text1">{{ msg }}</h1>
+    <h1 class="text3">{{ msg }}</h1>
     <div class="md-layout">
       <div class="md-layout-item md-size-75">
         <md-field>
@@ -40,10 +40,14 @@
         msg: 'Welcome 나의 첫번째 Vue 프로젝트',
       }
     },
-    created() {},
-    mounted() {},
-    updated() {},
-    destroyed() {},
+    created() {
+    },
+    mounted() {
+    },
+    updated() {
+    },
+    destroyed() {
+    },
     computed: {
       count() {
         return this.$store.state.count
@@ -61,12 +65,10 @@
       },
       reversMsg() {
         this.msg = this.msg.split('').reverse().join('');
-        console.log(this);
       }
     },
     watch: {
       reversedMsg(data) {
-        console.log(this.$route);
       },
     }
   }
@@ -74,11 +76,14 @@
 
 <style>
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    /*
+     font-family: 'nanum gothic', Roboto, Noto Sans, -apple-system, BlinkMacSystemFont, sans-serif;
+      */
+    font-family: Roboto, Noto Sans, -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #FFFFFF;
+    color: #746aff;
     margin-top: 60px;
   }
 

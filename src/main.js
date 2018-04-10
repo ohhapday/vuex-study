@@ -12,3 +12,5 @@ new Vue({
   store,
   router
 });
+
+// vendor 분리 및 개별 로딩 기능

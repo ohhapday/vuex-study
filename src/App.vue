@@ -12,8 +12,7 @@
         msg: 'Welcome to Your Vue.js App'
       }
     },
-    watch: {
-    }
+    watch: {}
   }
 </script>
 
@@ -22,8 +21,8 @@
   @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
   @include md-register-theme("default", (
-    primary: md-get-palette-color(blue, A200), // The primary color of your application
-    accent: md-get-palette-color(red, A200) // The accent or secondary color
+    primary: md-get-palette-color(green, A200),
+    accent: md-get-palette-color(pink, A200),
   ));
 
   @import "~vue-material/dist/theme/all"; // Apply the theme
